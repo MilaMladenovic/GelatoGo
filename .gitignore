@@ -1,0 +1,22 @@
+# Maven
+target/
+
+# NetBeans
+nbproject/private/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React
+ice-cream-delivery-front/node_modules/
+
+# React build
+ice-cream-delivery-front/build/
+ice-cream-delivery-front/dist/
+
+# Environment
+.env

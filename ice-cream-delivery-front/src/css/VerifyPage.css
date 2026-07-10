@@ -1,0 +1,168 @@
+/* GELATOGO USER PROFILE */
+
+.protected-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(circle at top right, #fde7ef 0%, transparent 35%),
+    radial-gradient(circle at bottom left, #fff2d6 0%, transparent 40%),
+    #faf8f5;
+}
+
+.protected-card {
+  width: 100%;
+  max-width: 620px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 55px 45px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, .05);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, .08),
+    0 8px 25px rgba(0, 0, 0, .04);
+  animation: fadeUp .45s ease;
+}
+
+/* CARD DETAILS */
+
+.protected-icon {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff3cd, #ffe0ec);
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, .8),
+    0 10px 24px rgba(255, 182, 193, .35);
+}
+
+.success-icon-bg {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb) !important;
+  box-shadow: 0 10px 24px rgba(40, 167, 69, 0.2) !important;
+}
+
+.error-icon-bg {
+  background: linear-gradient(135deg, #f8d7da, #f5c6cb) !important;
+  box-shadow: 0 10px 24px rgba(220, 53, 69, 0.2) !important;
+}
+
+.protected-card h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 14px;
+}
+
+.protected-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.protected-subtext {
+  max-width: 470px;
+  margin: auto;
+  line-height: 1.75;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* BUTTONS */
+
+.protected-buttons {
+  margin-top: 38px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.protected-login-btn,
+.protected-register-btn {
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 15px 34px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: .28s;
+}
+
+.protected-login-btn {
+  color: white;
+  background: linear-gradient(135deg, #ff6b81, #ff4d6d);
+  box-shadow: 0 14px 30px rgba(255, 107, 129, .30);
+}
+
+.protected-login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 36px rgba(255, 107, 129, .38);
+}
+
+.protected-register-btn {
+  background: white;
+  color: #444;
+  border: 1px solid #e5e5e5;
+}
+
+.protected-register-btn:hover {
+  background: #fafafa;
+  transform: translateY(-3px);
+}
+
+/* ANIMATIONS */
+
+.spin-animation {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px) {
+  .protected-card {
+    padding: 38px 25px;
+  }
+  .protected-card h1 {
+    font-size: 1.8rem;
+  }
+  .protected-buttons {
+    flex-direction: column;
+  }
+  .protected-login-btn,
+  .protected-register-btn {
+    width: 100%;
+  }
+}

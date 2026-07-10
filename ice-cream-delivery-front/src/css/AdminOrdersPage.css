@@ -1,0 +1,456 @@
+
+/* GELATOGO ADMIN ORDERS */
+
+:root {
+  --bg: #faf8f5;
+  --card: rgba(255, 255, 255, .82);
+  --border: #ece6df;
+  --text: #1f1b18;
+  --muted: #6c6761;
+  --primary: #ff5e7e;
+  --primary2: #ff8b65;
+  --danger: #dc3545;
+  --shadow:
+    0 8px 30px rgba(0, 0, 0, .05),
+    0 2px 8px rgba(0, 0, 0, .03);
+  --radius: 22px;
+}
+
+/* PAGE */
+
+.admin-orders-page {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 140px 30px 60px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.admin-orders-page::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  right: -150px;
+  top: -170px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle,
+      rgba(255, 94, 126, .12) 0%,
+      rgba(255, 139, 101, .04) 65%,
+      transparent 100%);
+  pointer-events: none;
+}
+
+.admin-orders-page::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: -120px;
+  bottom: -120px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle,
+      rgba(255, 210, 170, .18),
+      transparent 70%);
+  pointer-events: none;
+}
+
+/* HEADER */
+
+.admin-orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.admin-orders-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.admin-orders-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0;
+}
+
+/* BUTTONS */
+
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: .95rem;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background:
+    linear-gradient(135deg,
+      var(--primary),
+      var(--primary2));
+  color: white;
+  box-shadow:
+    0 10px 22px rgba(255, 94, 126, .25);
+}
+
+.btn.primary:hover {
+  box-shadow:
+    0 14px 30px rgba(255, 94, 126, .35);
+}
+
+.btn:not(.primary) {
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.btn.danger {
+  background: #fff2f2;
+  color: #d63c4a;
+  border: 1px solid #ffd7dd;
+}
+
+.btn.danger:hover {
+  background: #ffe8eb;
+}
+
+/* CARD */
+
+.orders-card {
+  position: relative;
+  z-index: 2;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* TABLE */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: #f7f3ef;
+}
+
+.table th {
+  padding: 22px;
+  text-align: left;
+  color: #555;
+  font-size: .83rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.table td {
+  padding: 20px 22px;
+  border-top: 1px solid #f2eeea;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: .22s;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, .55);
+}
+
+.right {
+  text-align: right;
+}
+
+/* STATUS */
+
+.status-select {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: .9rem;
+  transition: .25s;
+}
+
+.status-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow:
+    0 0 0 4px rgba(255, 94, 126, .12);
+}
+
+/* ACTIONS */
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions .btn {
+  padding: 10px 15px;
+}
+
+/* EMPTY STATE */
+
+.orders-empty {
+  text-align: center;
+  padding: 90px 20px;
+  background: rgba(255, 255, 255, .75);
+  backdrop-filter: blur(18px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, .7);
+  box-shadow: var(--shadow);
+}
+
+.orders-empty h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.orders-empty p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* STATUS BADGES */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.status-created {
+  background: #eef4ff;
+  color: #2563eb;
+}
+
+.status-confirmed {
+  background: #ecfdf3;
+  color: #16a34a;
+}
+
+.status-completed {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.status-canceled {
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+/* ORDER ITEMS */
+
+.items-row td {
+  background: #fcfbf9;
+  padding: 0;
+}
+
+.order-items {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 16px 18px;
+
+  background: white;
+  border: 1px solid #f0ebe6;
+  border-radius: 16px;
+
+  transition: .25s;
+}
+
+.order-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, .05);
+}
+
+.order-item strong {
+  display: block;
+  color: var(--text);
+  font-size: .97rem;
+}
+
+.order-item div:last-child {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* LOADING & ERROR */
+
+.admin-orders-loading,
+.admin-orders-error {
+  max-width: 700px;
+  margin: 180px auto;
+  padding: 60px;
+  text-align: center;
+  background: rgba(255, 255, 255, .82);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, .7);
+  box-shadow: var(--shadow);
+  font-size: 1.05rem;
+}
+
+.admin-orders-loading {
+  color: var(--muted);
+}
+
+.admin-orders-error {
+  color: #c62828;
+}
+
+/* TABLE DETAILS */
+
+.table th:first-child,
+.table td:first-child {
+  padding-left: 28px;
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: 28px;
+}
+
+.table tbody tr {
+  animation: fadeIn .35s ease;
+}
+
+.table tbody tr td {
+  transition: background .2s ease;
+}
+
+.table tbody tr:hover td {
+  background: rgba(255, 255, 255, .35);
+}
+
+/* SCROLLBAR */
+
+.orders-card::-webkit-scrollbar {
+  height: 10px;
+}
+
+.orders-card::-webkit-scrollbar-thumb {
+  background: #d9d3cd;
+  border-radius: 20px;
+}
+
+.orders-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px) {
+
+  .admin-orders-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+}
+
+@media(max-width:850px) {
+
+  .admin-orders-page {
+    padding: 120px 18px 40px;
+  }
+
+  .orders-card {
+    overflow-x: auto;
+  }
+
+  .table {
+    min-width: 920px;
+  }
+
+  .admin-orders-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media(max-width:600px) {
+
+  .admin-orders-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-orders-loading,
+  .admin-orders-error,
+  .orders-empty {
+    padding: 40px 24px;
+  }
+}

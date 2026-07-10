@@ -1,0 +1,341 @@
+/* GELATOGO SHOPPING CART */
+
+/* PAGE */
+
+.cart-page {
+  max-width: 1400px;
+  margin: 120px auto 80px;
+  padding: 0 40px;
+}
+
+/* HEADER */
+
+.cart-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.cart-subtitle {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #f2ebff;
+  color: #7c3aed;
+  font-weight: 600;
+  font-size: .9rem;
+  margin-bottom: 18px;
+}
+
+.cart-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 14px;
+  color: #1a1a1a;
+}
+
+.cart-header p {
+  max-width: 650px;
+  margin: auto;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* LAYOUT */
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 2fr 420px;
+  gap: 40px;
+  align-items: start;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* CART CARDS */
+
+.cart-card {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+  transition: .35s;
+}
+
+.cart-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .12);
+}
+
+.cart-image {
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
+}
+
+.cart-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+}
+
+.cart-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cart-top h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.cart-top p {
+  color: #666;
+  line-height: 1.7;
+}
+
+.price {
+  color: #7c3aed;
+  font-size: 1.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ACTIONS & CONTROLS */
+
+.cart-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #7c3aed;
+  color: white;
+  font-size: 1.3rem;
+  transition: .25s;
+}
+
+.quantity button:hover {
+  background: #6530d3;
+}
+
+.quantity input {
+  width: 60px;
+  height: 42px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.remove-btn {
+  background: #fff0f0;
+  color: #d11a2a;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: .25s;
+}
+
+.remove-btn:hover {
+  background: #d11a2a;
+  color: white;
+}
+
+/* ORDER SUMMARY */
+
+.order-summary {
+  position: sticky;
+  top: 110px;
+  background: white;
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+}
+
+.order-summary h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  color: #666;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #ececec;
+  margin: 25px 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.free {
+  color: #22a447;
+  font-weight: 700;
+}
+
+/* SUMMARY FORM */
+
+.summary-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summary-form label {
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.summary-form textarea {
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 14px;
+  font-family: inherit;
+  font-size: .95rem;
+  transition: .25s;
+}
+
+.summary-form textarea:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, .12);
+}
+
+/* CHECKOUT BUTTON */
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 18px;
+  border-radius: 16px;
+  background: #7c3aed;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.checkout-btn:hover {
+  background: #6530d3;
+  transform: translateY(-2px);
+}
+
+.checkout-btn:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+/* EMPTY STATE */
+
+.cart-empty {
+  max-width: 650px;
+  margin: 140px auto;
+  background: white;
+  padding: 70px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .08);
+}
+
+.cart-empty-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.cart-empty h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  margin-bottom: 18px;
+}
+
+.cart-empty p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.continue-btn {
+  background: #7c3aed;
+  color: white;
+  padding: 18px 36px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.continue-btn:hover {
+  background: #6530d3;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+  .order-summary {
+    position: static;
+  }
+}
+
+@media(max-width:760px) {
+  .cart-page {
+    padding: 0 20px;
+  }
+  .cart-card {
+    flex-direction: column;
+  }
+  .cart-image {
+    width: 100%;
+    height: 240px;
+  }
+  .cart-top {
+    flex-direction: column;
+  }
+  .cart-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
